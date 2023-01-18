@@ -7,5 +7,5 @@ class House:
         webbrowser.open(self.mapurl, new=2)
 
 #Main program
-myHouse = House("https://www.google.com/maps/place/The+Peanut/@38.8871376,-94.593401,15z/data=!4m5!3m4!1s0x0:0x870965017c19f4a5!8m2!3d38.8925689!4d-94.6073517")
+myHouse = House("https://www.google.com/maps/place/Mammoth+Mountain/@37.6195326,-119.0129501,13.3z/data=!4m13!1m7!3m6!1s0x80960c5f79b3179f:0xf114d9d70fee8d6d!2sMammoth+Lakes,+CA+93546!3b1!8m2!3d37.648546!4d-118.972079!3m4!1s0x80960d2646f49e0d:0x5805dac91469afa4!8m2!3d37.6307681!4d-119.0326381")
 myHouse.ShowMap()
