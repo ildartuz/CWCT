@@ -1,0 +1,13 @@
+a = 10
+
+b = 0
+
+try:
+    c = a / b
+    print ("a/b = c =", c)
+    
+except Exception as e:
+
+    print("Exception", e) 
+ 
+print ("end of program")
