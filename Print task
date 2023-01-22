@@ -1,0 +1,9 @@
+PY_creator = "Guido van Rossum"
+PY_BD = "December, 1989"
+BDFL = "BDFL is acronym for \"Benevolent Dictator For Life\""
+
+print("1 Who was the creator of Python?" "\n2 When was Python created?" "\n3 In the Python community, the person who created Python is commonly referred to as the \"BDFL\". What does that acronym mean?")
+print()
+print("1", PY_creator)
+print("2", PY_BD)
+print("3", BDFL)
