@@ -1,0 +1,33 @@
+
+# Ildar Tuzmukhamedov
+# CWCT Python Essentials course: Jan-Mar 2023 cohort
+# Date: 28 Jan 2023
+#----------------------------------------------------------------------
+# Python astronaut weight calculation application
+# HW assignement to recalculate the weight on different planets
+#----------------------------------------------------------------------
+
+#Variables block
+
+print("---------------------------------------- \n This is an astronaut weight calculator \n----------------------------------------")
+myName = (input("Please enter your first and last name, please \n-> "))
+myWeight = float(input("Please enter your weight in pounds \n-> "))
+mySun = round(myWeight * 27.01, 2)
+myMercury = round(myWeight * 0.38, 2)
+myVenus = round(myWeight * 0.91, 2)
+myMoon = round(myWeight * 0.166, 2)
+myMars = round(myWeight * 0.38, 2)
+myJupiter = round(myWeight * 2.34, 2)
+mySaturn = round(myWeight * 1.06, 2)
+myUranus = round(myWeight * 0.92, 2)
+myNeptune = round(myWeight * 1.19, 2)
+myPluto = round(myWeight * 0.06, 2)
+
+#UI output block
+
+print("\n----------------------")
+print("Astronaut " + myName,"!", "\n-\nWelcome on board! \n-\nWe will help you to calculate your weight on objects of the Sun planetary system. \n-\nIf you weight ", myWeight, "pounds on Earth, then your weight on other Sun planetary system objects will be: \n-")
+print(" Sun - ", mySun, "\n-", "\n Mercury", myMercury, "\n-", "\n Venus", myVenus, "\n-")
+print(" Moon - ", myMoon, "\n-", "\n Mars", myMars, "\n-", "\n Jupiter", myJupiter, "\n-")
+print(" Saturn - ", mySaturn, "\n-", "\n Uranus", myUranus, "\n-", "\n Neptune", myNeptune, "\n-")
+print(" Pluto - ", myPluto, "\n----------------------")
