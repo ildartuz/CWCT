@@ -1,0 +1,47 @@
+# Ildar Tuzmukhamedov
+# CWCT Python Essentials course: Jan-Mar 2023 cohort
+# Date: 28 Jan 2023
+#----------------------------------------------------------------------
+# Python calculator
+# HW assignement to print a restaurant cheque, based on user input
+#----------------------------------------------------------------------
+
+#Variables block
+
+print("------------------ \nThis is a restaurant billing application \n------------------")
+myBill = float(input("Please enter the cost of your meal today \n-> "))
+myTax = round((myBill/100) * 6.75, 2)
+myTotl = round(myBill + myTax, 2)
+myTip5 = round((myBill/100) * 5, 2)
+myTip10 = round((myBill/100) * 10, 2)
+myTip18 = round((myBill/100) * 18, 2)
+myTotal5 = round(myBill + myTax + myTip5, 2)
+myTotal10 = round(myBill + myTax + myTip10, 2)
+myTotal18 = round(myBill + myTax + myTip18, 2)
+
+#UI block
+
+print("\n----------------------")
+print("The cost of your meal is - %.2f" % myBill, "$")
+print("-")
+print("The tax amount is - %.2f" % myTax, " $ (6.75%)", "\n-", "\n     Total with tax:            - %.2f" % myTotl, "$")
+print("---------------------- \n\n")
+print("IT WAS A PLEASURE TO WELCOME YOU! You may TIP our waiter now", "\n-")
+print("The suggested tip of 5% ", "is - %.2f" % myTip5, "$", "\n     Your Total bill will be            - %.2f" % myTotal5, "$")
+print("-")
+print("The suggested tip of 10% ", "is - %.2f" % myTip10, "$", "\n     Your Total bill will be            - %.2f" % myTotal10, "$")
+print("----------------------")
+print("The suggested tip of 18% ", "is - %.2f" % myTip18, "$", "\n     Your Total bill will be            - %.2f" % myTotal18, "$")
+print("----------------------")
+myTip = float(input("You want to leave some Tip? Please enter your Tip amount \n-> "))
+myTotal = round(myBill + myTax + myTip, 2)
+
+#Bill block
+
+print("-")
+print("The Total due is %.2f" % myTotal, "$")
+print("______________________")
+print("\n           - Meal: %.2f" % myBill, "$")
+print("            - Tax: %.2f" % myTax, "$")
+print("            - Tip: %.2f" % myTip, "$ \n")
+print("Thank you! Please, come back!")
