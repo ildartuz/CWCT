@@ -13,7 +13,7 @@ print("          This program will: \n\n          - add \n          - subtract \
 print("Enter expression in form \"x <op> y\", e.g. 73 * 88, \nplease use space between the numbers and operations sign \n")
 
 calcmessage = input("Enter your arythmetical operation, in the next line \n -> ")
-print("Expression: ", calcmessage)
+print("You entered: ", calcmessage)
 
 # Calculation block
 
@@ -32,4 +32,4 @@ elif operator == "/":
     result = value1 / value2
 
 # UI output
-print(calcmessage, "= %.2f" % result)
+print("Result: ", calcmessage, "= %.2f" % result)
