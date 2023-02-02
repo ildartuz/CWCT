@@ -1,0 +1,36 @@
+# Ildar Tuzmukhamedov
+# CWCT Python Essentials course: Jan-Mar 2023 cohort
+# Date: 28 Jan 2023
+#----------------------------------------------------------------------
+# Python calculator
+# HW Lab assignment Module 2
+#----------------------------------------------------------------------
+
+# UI block
+
+print("----------------------", "\nPython Calculator", "\n----------------------")
+print("          This program will: \n\n          - add \n          - subtract \n          - multiply  \n          - divide \n")
+print("Enter expression in form \"x <op> y\", e.g. 73 * 88, \nplease use space between the numbers and operations sign \n")
+
+calcmessage = input("Enter your arythmetical operation, in the next line \n -> ")
+print("You entered: ", calcmessage)
+
+# Calculation block
+
+parameters = calcmessage.split()
+value1 = float(parameters[0])
+operator = parameters[1]
+value2 = float(parameters[2])
+
+match operator:
+    case "-":
+        result = value1 - value2
+    case "+":
+        result = value1 + value2
+    case "*":
+        result = value1 * value2
+    case "/":
+        result = value1 / value2
+
+# UI output
+print("Result: ", calcmessage, "= %.2f" % result)
