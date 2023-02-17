@@ -1,0 +1,86 @@
+################################################
+#  Program name: Triangle Inspector.py
+#  Author: Ildar Tuzmukhamedov
+#  Course: Python Essentials
+#  Date: 2/7/2023
+#  Assignment: Module 3 - Triangle Inpector
+#  Purpose: Define if the figure is a triangle
+################################################
+
+
+import sys
+
+print("Triangle inspector")
+
+#user input
+
+sideA = float(input("Enter the length of side A of the triangle: "))
+sideB = float(input("Enter the length of side B of the triangle: "))
+sideC = float(input("Enter the length of side C of the triangle: "))
+
+#validate the input
+
+if sideA <= 0 or sideB <= 0 or sideC <= 0:
+    
+    print("Wrong input, your number can not be less or = 0")
+    print("End")
+    sys.exit(0)
+#Initialize boolean flags for each type of a triangle
+
+IsTriangle = False
+IsRightTriangle = False
+IsEquilateralTriangle = False
+IsIsoscelesTriangle = False
+
+#Check if we have a triangle
+
+if sideA + sideB > sideC and sideA + sideC > sideB and sideB + sideC > sideA:
+    IsTriangle = True
+    
+else:
+    print("Sorry, this is not a triangle \nEnd")
+    sys.exit(0)
+    
+#check if Right triangle    
+if sideA > sideB and sideA > sideC:
+    IsRightTriangle = sideA**2 == sideB**2 + sideC**2
+    
+elif  sideB > sideA and sideB > sideC:
+    IsRightTriangle = sideB**2 == sideA**2 + sideC**2
+   
+elif  sideC > sideA and sideC > sideB:
+    IsRightTriangle = sideC**2 == sideA**2 + sideB**2
+    
+#check if Equilateral triangle
+
+if sideA == sideB and sideA == sideC:
+    IsEquilateralTriangle = True
+    
+#check if Isosceles triangle
+
+if sideA == sideB and sideA != sideC:
+    IsIsoscelesTriangle = True
+    
+if sideA == sideC and sideA != sideB:
+    IsIsoscelesTriangle = True
+   
+if sideB == sideC and sideB != sideA:
+    IsIsoscelesTriangle = True
+    
+#confirm type of triangle    
+
+if IsRightTriangle:
+    print("We have a right triangle \nEnd")
+    sys.exit(0)
+if IsEquilateralTriangle:
+    print("We have an equilateral triangle \nEnd")
+    sys.exit(0)
+if IsIsoscelesTriangle:
+    print("We have an isosceles triangle \nEnd")
+    sys.exit(0)
+
+elif IsTriangle:
+    print("We have a triangle \nEnd")
+    
+
+    sys.exit(0)
