@@ -1,0 +1,43 @@
+################################################
+#  Program name: DistanceTraveled.py
+#  Author: Ildar Tuzmukhamedov
+#  Course: Python Essentials
+#  Date: 2/9/2023
+#  Assignment: Module 3 - Distance Traveled
+#  Purpose: Calculate the distance
+################################################
+
+
+import sys
+
+print("""
+    #######################
+    #  Distance Traveled  #
+    #######################
+      """)
+
+#user input
+
+speed = float(input("What was the speed (miles per hour) of your vehicle in a trip? \n-> "))
+time = float(input("How many hours have you traveled? \n-> "))
+distance = int(speed * time)
+i = 1
+#validate the input
+
+if speed < 0 or time < 1:
+    
+    print("Wrong input, enter your speed and time of travel (hours, no less than 1)")
+    sys.exit(0)
+    
+#main
+
+else:
+    print("\n\n\t You traveled", distance, "miles \n")
+    print("\tHour \t Distance Traveled \n--------------------------------")
+    
+for i in range(1, int(time + 1)):
+
+    print("\t ", i, "\t\t\t", int(speed * i))
+    i += 1
+
+sys.exit(0)
