@@ -1,0 +1,46 @@
+################################################
+#  Program name: Ceasar.py
+#  Author: Ildar Tuzmukhamedov
+#  Course: Python Essentials
+#  Date: 2/10/2023
+#  Assignment: Module 4 - Encryption script
+#  Purpose: Encrypt the giver text and decode
+################################################
+
+#function
+
+def Encode(inputmsg, encryptkey):
+    outputmsg = ""
+
+    for letter in inputmsg:
+        
+        numeric = ord(letter)
+        numer = numeric + encryptkey - 32
+        num = numer % 94 + 32
+
+#        if (numeric + encryptkey) > 126:
+#            numeric = numeric - 95
+#        if (numeric) < 32:
+#            numeric = numeric + 95
+            
+        newletter = chr(num)
+        outputmsg += newletter
+            
+    return outputmsg
+
+#main
+
+print("\n\n\n\t Encryption program \n ---------------------------")
+
+text = str(input(" Please, enter plain text to encode \n -> "))
+key = int(input(" Enter key to encode \n -> "))
+
+encoded_text = Encode(text, key)
+decoded_text = Encode(encoded_text, - key)
+
+print()
+print(" Original text: ", text)
+print(" Encoded text: ", encoded_text)
+print(" Decoded text: ", decoded_text)
+print("\n End of program.")
+
