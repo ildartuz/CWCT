@@ -1,0 +1,27 @@
+################################################
+#  Program name: Falling Distance.py
+#  Author: Ildar Tuzmukhamedov
+#  Course: Python Essentials
+#  Date: 2/10/2023
+#  Assignment: Module 4 - Falling Distance Calc
+#  Purpose: How far will you fall under gravity
+################################################
+
+#function
+
+def fallingDistance(t):
+        dis = round((0.5 * 9.8 * (t ** 2)), 2)
+        return dis
+
+#user_input
+
+t = int(input("How long do you plan to fly during a free fall (seconds?: \n--> "))
+
+#output
+
+print("\t Time \t\t Distance \n------------------------------")
+
+for i in range (0, t+1):
+    fallingDistance(i)
+    print("\t ", i, "\t\t ", fallingDistance(i))
+    i += 5
