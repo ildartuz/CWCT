@@ -1,0 +1,49 @@
+################################################
+#  Program name: CircleArea.py
+#  Author: Ildar Tuzmukhamedov
+#  Course: Python Essentials
+#  Date: 2/10/2023
+#  Assignment: Module 4 - Circle params Calc
+#  Purpose: Circle parameters calculation
+################################################
+
+#intro
+print("""
+                #######################      
+                #   Circle Circus!!!  #
+                #######################
+      """)
+      
+#functions
+def calculateRadius():
+        rad = round(((x2 - x1) ** 2) + ((y2 - y1) ** 2) ** 0.5)
+        return rad
+def calculateArea():
+        ara = round(pi * (rad ** 2))
+        return ara
+def calculatePerimeter():
+        per = round((pi * 2) * rad)
+        return per    
+
+#user_input
+cen = input("Enter coordinates of your Circle's center (x,y) \n--> ")
+cir = input("Enter any coordinates on your Circle's perimeter (x,y) \n--> ")
+  
+#var
+pi = 3.1415926
+center = cen.split()
+x1 = int(cen[0])
+y1 = int(cen[2])
+circle = cir.split()
+x2 = int(cir[0])
+y2 = int(cir[2])
+rad = calculateRadius()
+dia = rad * 2
+ara = calculateArea()
+per = calculatePerimeter()
+           
+#output
+print("\n\n\n\t----------     Your Circle Magic:    ---------")
+print("\t Radius \t Diameter \t Circumference \t Area ")
+print("\t  ", rad, "\t\t   ", dia, "\t\t     ", per, "\t\t ", ara)
+print("\t----------------------------------------------\n\t End of program.")
