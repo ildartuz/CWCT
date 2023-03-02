@@ -1,0 +1,134 @@
+
+################################################
+#  Program name: Phone Book.py
+#  Author: Ildar Tuzmukhamedov
+#  Course: Python Essentials 2, CWCT 140
+#  Date: 02/01/2023
+#  Assignment: Module 1 - Phone Book
+#  Purpose: Phone book with add, update, delete
+################################################
+
+#imports of modules
+
+from tabulate import tabulate
+import sys
+
+# setting the initial list inside the list for phone numbers
+# I chose this format to be able to use tabulation that my phonebook looked good
+# I know about dictionaries as more convenient way to have indices of data, but
+# my preference was a visual representation of data with even columns 
+
+p_list = [
+    ["John Travolta", "999-999-0000"],
+    ["James Bond", "007-007-0007"],
+    ["Forrest Gump", "911-911-9991"]
+    ]
+col_names = ["  Name", "  Phone"]
+
+# Functions Module
+
+# list phone book phone numbers           
+def show_contacts(p_list):
+    print()
+    print(tabulate(p_list, headers=col_names))
+    
+# I saved the old script for dictionary list type just in case
+# " \n \tName \t\t\t Number")
+#    for i in p_list:
+#        print(i + "\t\t" + p_list[i])
+        
+# add contact
+def add_contact(p_list):
+    print(" \n \tAdding contact")
+    name = str(input(" \t- Name of a new contact: \n \t-> "))
+    phone = str(input(" \t- Phone of a new contact: \n \t-> "))
+    p_list.append([name, phone])
+    print()
+    show_contacts(p_list)
+
+# update contact
+# this is reworked for using list inside the list, I replaced dictionary
+# and this made me change the code inside the functions, as there are no indices
+# to manipulate the data, so I used sublist and append to output the same stuff
+def update_contact(p_list):
+    show_contacts(p_list)
+    print(" \n \tUpdating contact")
+    name = input(" \t- Name (please enter full name): \n \t-> ")
+    # here I am making a copy of user input to add to list later "naame"
+    naame = name
+    isname = any(name in sublist for sublist in p_list)
+    if (isname == True):
+        name = 1
+        #delete the list item requires integer, so convert name to 1 to delete the old list item 
+        del p_list[name]
+        phone = input("\n \t- New number: \n \t-> ")
+        #here I create a new list item, using a spare copy of naame and new number
+        p_list.append([naame, phone])
+        print()
+        show_contacts(p_list)
+    else:
+        print(name, "\t\t\t\t NOT FOUND!!! ")
+        print()
+        show_contacts(p_list)
+   
+# del contact
+def delete_contact(p_list):
+    show_contacts(p_list)
+    print(" \n \tDeleting contact")
+    name = input(" \t- Name (please enter full name): \n \t-> ")
+    isname = any(name in sublist for sublist in p_list)
+    if (isname == True):
+        name = 1
+        del p_list[name]
+        print()
+        show_contacts(p_list)
+    else:
+        print(name, "\t\t\t\t NOT FOUND!!! ")
+        print()
+        show_contacts(p_list)
+
+# Main program
+
+# title on top of the program
+print("""
+                #######################      
+                #      Phone Book     #
+                #######################
+      """)
+
+# while loop for menu command selection
+command = -1
+while command != "0": 
+# show menu
+    
+    print("\n\t--------COMMAND MENU--------")
+    print(" \t1 - Show the contact list")
+    print(" \t2 - Add to contact list")
+    print(" \t3 - Update contact phone number")
+    print(" \t4 - Delete contact")
+    print(" \t0 - Exit")
+    print(" \t----------------------------")
+
+   
+    command = input("\n \tEnter your command? \n \t-> ")
+# accept command input, decode command and call function    
+    if command == "1":
+        show_contacts(p_list)
+    elif command == "2":
+        add_contact(p_list)
+    elif command == "3":
+        update_contact(p_list)
+    elif command == "4":
+        delete_contact(p_list)
+    elif command == "0":
+         print("\n\t\t\tEnd of program")
+         sys.exit()
+    else:
+        print("\n\tInvalid input, try again:")
+        continue
+    
+
+
+
+
+
